@@ -1,15 +1,13 @@
-# FilterTwits
+# Twits
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/filter_twits`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to twits tool! It will help you to browse all hyperlinks from all twits
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'filter_twits'
+gem 'twits'
 ```
 
 And then execute:
@@ -18,18 +16,17 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install filter_twits
+    $ gem install twits
 
 ## Usage
 
-TODO: Write usage instructions here
+# twits filter
 
-## Development
+|     params    |  type  |                 description                  |
+|---------------|--------|----------------------------------------------|
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+# requirments
 
-## Contributing
+A small homework: Imagine that you don't want to or just don't have enough time to go through entire Twitter timeline every day and you are only interested in URLs to the various resources that are submitted by the people you follow (e.g., to blog posts). Implement a script that solves that problem and returns all tweets containing URLs. You should be able to specify either since when you want to fetch tweets or between what timestamps. Make it executable and runnable from console returning a nicely formatted result. The output should include the URLs themselves, date and some info indicating what it is about (especially for shortened URLs). Treat it as a real-world feature and send us a link to the repo.
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/filter_twits.
