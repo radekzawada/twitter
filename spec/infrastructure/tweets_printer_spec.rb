@@ -1,4 +1,4 @@
-RSpec.describe Infrastructure::UrlsPrinter do
+RSpec.describe Infrastructure::TweetsPrinter do
   describe '.print' do
     let(:urls_list) { ['www.foo.com'] }
     let(:expected_result) { urls_list.to_s }

@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'twits'
   spec.version       = Twits::VERSION
   spec.authors       = ['Radek']
-  spec.email         = ['radoslaw.zawada@starware.com.pl']
+  spec.email         = ['radek_zawada@op.pl']
 
   spec.summary       = 'twitter hyperlinks filterer'
   spec.description   = 'hyperlinks filterer, great tools!'
@@ -26,4 +26,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop', '~> 0.41.2'
   spec.add_development_dependency 'pry', '~> 0.11.3'
   spec.add_dependency 'thor', '~> 0.20'
+  spec.add_dependency 'twitter', '~> 6.0'
 end
