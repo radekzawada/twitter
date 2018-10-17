@@ -10,7 +10,7 @@ RSpec.describe Infrastructure::Repositories::TweetsRepository do
 
     let(:twitter_client) { double(Twitter::REST::Client) }
     let(:user_name) { 'user' }
-    let(:query_builder) { double(Infrastructure::Queries::Builders::Tweets) }
+    let(:query_builder) { double(Infrastructure::Queries::Builders::TweetsWithUrls) }
     let(:params) { {} }
     let(:friends_names) { %w(friend1 friend2 friend3 friend4) }
     let(:friends) { friends_names.map { |friend_name| double(screen_name: friend_name) } }

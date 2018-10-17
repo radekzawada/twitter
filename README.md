@@ -1,4 +1,4 @@
-# Twits
+# ERTweet
 
 Welcome to twits tool! It will help you to browse all hyperlinks from all twits
 
@@ -18,9 +18,17 @@ Or install it yourself as:
 
     $ gem install twits
 
+## Variables
+
+TWITTER_API_CONSUMER_KEY => Your api consumer key from twitter api
+TWITTER_API_CONSUMER_SECRET => Your api consumer secret from twitter api
+TWITTER_USER_NAME => user name for search
+
 ## Usage
 
-# twits filter
+bundle exec exe/twits filter
+
+# tweets filter
 
 |     params    |  type  |                 description                  |
 |---------------|--------|----------------------------------------------|

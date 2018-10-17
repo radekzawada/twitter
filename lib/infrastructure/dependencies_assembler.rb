@@ -1,9 +1,5 @@
 module Infrastructure
   class DependenciesAssembler
-    def initialize(application)
-      @application = application
-    end
-
     def filter_tweets_with_urls_action
       Infrastructure::Actions::FilterTweetsWithUrlsAction.new(
         tweets_repository: tweets_repository
@@ -14,9 +10,13 @@ module Infrastructure
       Infrastructure::TweetsPrinter.new
     end
 
-    private
+    def urls_table_builder
+      Infrastructure::UrlsTableBuilder.new(
+        urls_data_retriever: urls_data_retriever
+      )
+    end
 
-    attr_reader :application
+    private
 
     def tweets_repository
       Infrastructure::Repositories::TweetsRepository.new(
@@ -26,15 +26,19 @@ module Infrastructure
       )
     end
 
+    def urls_data_retriever
+      Infrastructure::UrlsDataRetriever.new
+    end
+
     def tweets_query_builder
-      Infrastructure::Queries::Builders::Tweets.new(
+      Infrastructure::Queries::Builders::TweetsWithUrls.new(
         params_sanitizer: params_sanitizer,
-        connectors: Infrastructure::Queries::Connectors::FILTER_PARAMS_CONNECTORS
+        connectors: Constants::FILTER_PARAMS_CONNECTORS
       )
     end
 
     def params_sanitizer
-      Infrastructure::Queries::Params::FilterTweetsWithUrlsSanitizer.new(
+      Infrastructure::Queries::Params::TweetsWithUrlsSanitizer.new(
         Infrastructure::Constants::FILTER_TWEETS_DEFAULT,
         user_name
       )
@@ -42,15 +46,9 @@ module Infrastructure
 
     def twitter_client
       Twitter::REST::Client.new(
-        consumer_key: configuration.twitter.consumer_key,
-        consumer_secret: configuration.twitter.consumer_secret,
-        access_token: configuration.twitter.access_token,
-        access_token_secret: configuration.twitter.access_token_secret
+        consumer_key: ENV['TWITTER_API_CONSUMER_KEY'],
+        consumer_secret: ENV['TWITTER_API_CONSUMER_SECRET']
       )
-    end
-
-    def configuration
-      Application.config
     end
 
     def user_name

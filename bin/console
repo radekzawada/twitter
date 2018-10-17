@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'bundler/setup'
-require 'twits'
+require 'er_tweet'
 
 require 'irb'
 require

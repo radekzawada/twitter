@@ -1,14 +1,14 @@
 module Infrastructure
   module Queries
     module Params
-      class FilterTweetsWithUrlsSanitizer
+      class TweetsWithUrlsSanitizer
         def initialize(default_filters, user_name)
           @default_filters = default_filters
           @user_name = user_name
         end
 
         def sanitize!(params)
-          raise ::Exceptions::WrongParameterException, 'USER_NAME parameter is not set' unless user_name
+          raise ::Exceptions::WrongParameterException, 'TWITTER_USER_NAME system variable is not set' unless user_name
 
           default_filters.each do |key, values|
             sanitize_default!(params, key, values)
@@ -22,7 +22,7 @@ module Infrastructure
 
         def sanitize_default!(params, key, default)
           params[key] ||= []
-          params[key] += [default].flatten
+          params[key].concat [default].flatten
           params[key].uniq!
         end
       end

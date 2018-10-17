@@ -3,7 +3,8 @@ require 'twits'
 require 'twitter'
 require 'yaml'
 require 'ostruct'
-require './config/application.rb'
+require 'fabrication'
+require 'faker'
 
 Dir['./lib/**/*.rb'].each { |file| require file }
 

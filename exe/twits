@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-require 'yaml'
-require 'ostruct'
-require 'twitter'
-require './config/application.rb'
-require 'twits'

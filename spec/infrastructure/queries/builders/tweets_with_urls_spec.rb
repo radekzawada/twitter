@@ -1,7 +1,7 @@
-RSpec.describe Infrastructure::Queries::Builders::Tweets do
+RSpec.describe Infrastructure::Queries::Builders::TweetsWithUrls do
   describe '.build_filter_with_urls_query' do
     subject(:builder) { described_class.new(params_sanitizer: params_sanitizer, connectors: connectors) }
-    let(:params_sanitizer) { double(Infrastructure::Queries::Params::FilterTweetsWithUrlsSanitizer) }
+    let(:params_sanitizer) { double(Infrastructure::Queries::Params::TweetsWithUrlsSanitizer) }
     let(:sanitized_params) { { filter: ['links'], :'-filter' => ['retweets'], from: [user_screen_name] } }
     let(:users_names) { [] }
     let(:user_screen_name) { 'user' }

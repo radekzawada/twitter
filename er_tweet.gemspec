@@ -1,11 +1,11 @@
 
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'twits/version'
+require 'er_tweet/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'twits'
-  spec.version       = Twits::VERSION
+  spec.name          = 'er_tweet'
+  spec.version       = ERTweet::VERSION
   spec.authors       = ['Radek']
   spec.email         = ['radek_zawada@op.pl']
 
@@ -25,6 +25,11 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rubocop', '~> 0.41.2'
   spec.add_development_dependency 'pry', '~> 0.11.3'
+  spec.add_development_dependency 'factory_bot', '~> 4.0'
+  spec.add_development_dependency 'fabrication', '~> 2.20'
+  spec.add_development_dependency 'faker', '~> 1.9.1'
+
   spec.add_dependency 'thor', '~> 0.20'
+  spec.add_dependency 'terminal-table', '~> 1.8.0'
   spec.add_dependency 'twitter', '~> 6.0'
 end

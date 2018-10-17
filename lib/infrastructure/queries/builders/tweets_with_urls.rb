@@ -1,8 +1,7 @@
-require 'pry'
 module Infrastructure
   module Queries
     module Builders
-      class Tweets
+      class TweetsWithUrls
         def initialize(dependencies)
           @params_sanitizer = dependencies.fetch(:params_sanitizer)
           @connectors = dependencies.fetch(:connectors)

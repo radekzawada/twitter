@@ -1,4 +1,4 @@
-RSpec.describe Infrastructure::Queries::Params::FilterTweetsWithUrlsSanitizer do
+RSpec.describe Infrastructure::Queries::Params::TweetsWithUrlsSanitizer do
   describe '.sanitize!' do
     subject(:sanitizer) { described_class.new(default_filters, user_name) }
     let(:default_filters) { { :'-filter' => 'retweets', filter: 'links' } }
@@ -25,7 +25,9 @@ RSpec.describe Infrastructure::Queries::Params::FilterTweetsWithUrlsSanitizer do
       let(:user_name) { nil }
 
       it 'raises exception' do
-        expect { sanitizer.sanitize!(params) }.to raise_exception(Exceptions::WrongParameterException, 'USER_NAME parameter is not set')
+        expect { sanitizer.sanitize!(params) }.to(
+          raise_exception(Exceptions::WrongParameterException, 'TWITTER_USER_NAME system variable is not set')
+        )
       end
     end
   end

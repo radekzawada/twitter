@@ -10,7 +10,7 @@ module Infrastructure
 
       def find_with_urls(params)
         query = query_builder.build_filter_with_urls_query(params, all_user_friends_names)
-        twitter_client.search(query).to_a
+        twitter_client.search(query)
       end
 
       private
