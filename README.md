@@ -16,7 +16,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem specific_install https://github.com/radekzawada/twitter.git
+    $ git clone https://github.com/radekzawada/twitter.git
+
+    $ gem build er_tweet.gemspec
+
+    $ gem install er_tweet-`[version]`.gem
 
 ## Dependencies
 
@@ -24,17 +28,25 @@ Ruby 2.5.2
 
 ## Variables
 
-[required] TWITTER_API_CONSUMER_KEY => Your api consumer key from twitter api
-[required] TWITTER_API_CONSUMER_SECRET => Your api consumer secret from twitter api
-[required] TWITTER_USER_NAME => user name for search
+`TWITTER_API_CONSUMER_KEY` [required] => Your api consumer key from twitter api
+
+`TWITTER_API_CONSUMER_SECRET` [required] => Your api consumer secret from twitter api
+
+`TWITTER_USER_NAME` [required] => user name for search
 
 ## Usage
 
+```
 er_tweet filter_with_urls
+```
 OR
-er_tweet filter_with_urls date_since
+```
+er_tweet filter_with_urls `date_since`
+```
 OR
-er_tweet filter_with_urls date_since date_until
+```
+er_tweet filter_with_urls `date_since` `date_until`
+```
 
 # result
 
