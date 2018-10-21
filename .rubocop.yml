@@ -3,3 +3,14 @@ Metrics/LineLength:
 
 Style/Documentation:
   Enabled: false
+
+Metrics/BlockLength:
+  Max: 25
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/AbcSize:
+  Max: 25
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

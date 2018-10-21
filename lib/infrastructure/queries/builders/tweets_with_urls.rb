@@ -20,9 +20,13 @@ module Infrastructure
 
         def connect_params(params)
           params.map do |key, values|
-            connector = connectors[key] || ' '
-            values.map { |v| "#{key}:#{v}" }.join(" #{connector} ")
+            connect_values(key, values)
           end.join(' ')
+        end
+
+        def connect_values(key, values)
+          connector = connectors[key] || ' '
+          [values].flatten.map { |v| "#{key}:#{v}" }.join(" #{connector} ")
         end
 
         def insert_from_params!(params, user_names)

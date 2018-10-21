@@ -1,5 +1,5 @@
 require 'bundler/setup'
-require 'twits'
+require 'er_tweet'
 require 'twitter'
 require 'yaml'
 require 'ostruct'

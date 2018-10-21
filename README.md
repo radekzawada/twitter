@@ -1,13 +1,13 @@
 # ERTweet
 
-Welcome to twits tool! It will help you to browse all hyperlinks from all twits
+Welcome to er_tweet tool! It will help you to browse all hyperlinks from all tweets
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'twits'
+gem 'er_tweet', git: 'https://github.com/radekzawada/twitter.git'
 ```
 
 And then execute:
@@ -16,25 +16,33 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install twits
+    $ gem specific_install https://github.com/radekzawada/twitter.git
+
+## Dependencies
+
+Ruby 2.5.2
 
 ## Variables
 
-TWITTER_API_CONSUMER_KEY => Your api consumer key from twitter api
-TWITTER_API_CONSUMER_SECRET => Your api consumer secret from twitter api
-TWITTER_USER_NAME => user name for search
+[required] TWITTER_API_CONSUMER_KEY => Your api consumer key from twitter api
+[required] TWITTER_API_CONSUMER_SECRET => Your api consumer secret from twitter api
+[required] TWITTER_USER_NAME => user name for search
 
 ## Usage
 
-bundle exec exe/twits filter
+er_tweet filter_with_urls
+OR
+er_tweet filter_with_urls date_since
+OR
+er_tweet filter_with_urls date_since date_until
 
-# tweets filter
+# result
 
-|     params    |  type  |                 description                  |
-|---------------|--------|----------------------------------------------|
-
-
-# requirments
-
-A small homework: Imagine that you don't want to or just don't have enough time to go through entire Twitter timeline every day and you are only interested in URLs to the various resources that are submitted by the people you follow (e.g., to blog posts). Implement a script that solves that problem and returns all tweets containing URLs. You should be able to specify either since when you want to fetch tweets or between what timestamps. Make it executable and runnable from console returning a nicely formatted result. The output should include the URLs themselves, date and some info indicating what it is about (especially for shortened URLs). Treat it as a real-world feature and send us a link to the repo.
-
+|     params    |                 description                   |
+|---------------|-----------------------------------------------|
+| url           | address attached to tweet                     |
+| type          | pointing on resource type                     |
+| publisher     | tweet publisher                               |
+| created_at    | publishing date                               |
+| lang          | post language                                 |
+| entities      | hastags(#), symbols($) and mentioned users(@) |

@@ -19,16 +19,16 @@ module Infrastructure
 
     def fetch_urls(tweet)
       urls = []
-      urls.concat tweet.urls.map { |url| { url: url.url.to_s, type: Constants::URL_HYPERLINK_TYPE } }
-      urls.concat tweet.media.map { |media| { url: media.url.to_s, type: media.type } }
+      urls.concat(tweet.urls.map { |url| { url: url.url.to_s, type: Constants::URL_HYPERLINK_TYPE } })
+      urls.concat(tweet.media.map { |media| { url: media.url.to_s, type: media.type } })
       urls
     end
 
     def fetch_entities(tweet)
       result = []
-      result.concat tweet.hashtags.map(&:text).map { |h| "##{h}" }
-      result.concat tweet.user_mentions.map(&:screen_name).map { |u| "@#{u}" }
-      result.concat tweet.symbols.map(&:text).map { |s| "$#{s}" }
+      result.concat(tweet.hashtags.map(&:text).map { |h| "##{h}" })
+      result.concat(tweet.user_mentions.map(&:screen_name).map { |u| "@#{u}" })
+      result.concat(tweet.symbols.map(&:text).map { |s| "$#{s}" })
 
       result
     end

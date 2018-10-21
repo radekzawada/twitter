@@ -12,7 +12,7 @@ RSpec.describe Infrastructure::Repositories::TweetsRepository do
     let(:user_name) { 'user' }
     let(:query_builder) { double(Infrastructure::Queries::Builders::TweetsWithUrls) }
     let(:params) { {} }
-    let(:friends_names) { %w(friend1 friend2 friend3 friend4) }
+    let(:friends_names) { %w[friend1 friend2 friend3 friend4] }
     let(:friends) { friends_names.map { |friend_name| double(screen_name: friend_name) } }
     let(:query) { { param1: 'val1', param2: 'val2' } }
     let(:tweets) { 2.times.map.with_index { |_v, i| double('Tweet', url: "http://:tweet_#{i}.com") } }

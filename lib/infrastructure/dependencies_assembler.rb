@@ -40,8 +40,13 @@ module Infrastructure
     def params_sanitizer
       Infrastructure::Queries::Params::TweetsWithUrlsSanitizer.new(
         Infrastructure::Constants::FILTER_TWEETS_DEFAULT,
-        user_name
+        user_name,
+        date_validator: date_validator
       )
+    end
+
+    def date_validator
+      Infrastructure::Queries::Params::DateValidator.new
     end
 
     def twitter_client
